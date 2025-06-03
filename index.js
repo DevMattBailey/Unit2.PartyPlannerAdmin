@@ -1,6 +1,39 @@
+
+// Write JS to implement the following features:
+  // Users can add a new party by submitting a form.
+
+  // Users can delete the selected party.
+      //Warning
+        // When you send a POST request to create a new party, the API is expecting the date to be an ISO string. 
+        // The request will fail if you send an invalid date. To get a valid ISO string:
+
+        // In your form, use <input type="date"/> to get the user's input as a date.
+        // Convert the date to the right format:
+            // const isoDate = new Date(dateFromForm).toISOString();
+        // Send the ISO string in your POST request for the date field.
+
+
+
+// Your submission should meet the following requirements:
+// index.html is not modified. All elements are generated via JS.
+    //DONE
+// The application renders a form where users can input the name, description, date, and location of a new party.
+    //DONE
+// The application is able to create a new party via a POST request to the API.
+
+  //use form input to create a new party post request to api
+  //figure out what that means.
+
+
+// The application renders a delete button for the selected party.
+// The application is able to remove the selected party via a DELETE request to the API.
+// The application is rerendered whenever state changes.
+// UI elements are organized into component functions.
+
+
 // === Constants ===
 const BASE = "https://fsa-crud-2aa9294fe819.herokuapp.com/api";
-const COHORT = ""; // Make sure to change this!
+const COHORT = "2505-FTB-ET-WEB-FT"; // Make sure to change this!
 const API = BASE + COHORT;
 
 // === State ===
@@ -141,9 +174,27 @@ function render() {
       <section id="selected">
         <h2>Party Details</h2>
         <SelectedParty></SelectedParty>
+            
+      <section id="Add-New-Party"></section>
+        <h2>Add New Party</h2>
+          <form>
+            <label for="guestName">Name:</label><br>
+            <input id="guestName" placeholder="Name" />
+            <label for="partyDescription">Description:</label><br>
+            <input id="partyDescription" placeholder="Description" />
+            <label for="partyDate">Date:</label><br>
+            <input id="partyDate" placeholder="Date" />
+            <label for="partyLocation">Location:</label><br>
+            <input id="partyLocation" placeholder="Location" />
+            <button>Add Party</button>
+          </form>
+
+
       </section>
     </main>
   `;
+
+
 
   $app.querySelector("PartyList").replaceWith(PartyList());
   $app.querySelector("SelectedParty").replaceWith(SelectedParty());

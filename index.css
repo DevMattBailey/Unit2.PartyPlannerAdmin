@@ -46,10 +46,12 @@ main {
 
 form {
   display: grid;
+  margin-bottom:1rem;
   gap: 1ch;
   padding: 0 1rem;
 }
 
 label {
   display: grid;
+
 }
